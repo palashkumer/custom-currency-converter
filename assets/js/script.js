@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
       type: "POST",
       url: cc_ajax_object.ajax_url,
       data: {
+        nonce: cc_ajax_object.nonce,
         action: "convert_currency",
         amount: amount,
         fromCurrency: fromCurrency,

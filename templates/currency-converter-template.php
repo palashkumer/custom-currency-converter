@@ -1,4 +1,4 @@
-<div class="container">
+<div class="cc-container">
     <h2>Currency Converter</h2>
     <label for="amount">Amount:</label>
     <input type="text" id="amount" placeholder="Enter amount">

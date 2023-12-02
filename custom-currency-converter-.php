@@ -24,6 +24,7 @@ function currency_converter_enqueue_scripts() {
 		'cc_ajax_object',
 		array(
 			'ajax_url' => admin_url( 'admin-ajax.php' ),
+			'nonce'    => wp_create_nonce( 'pk-cc-nonce' ),
 		)
 	);
 }

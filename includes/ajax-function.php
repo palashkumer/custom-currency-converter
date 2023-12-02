@@ -1,8 +1,9 @@
 <?php
 function convert_currency() {
+	check_ajax_referer( 'pk-cc-nonce', 'nonce' );
 	$amount        = isset( $_POST['amount'] ) ? floatval( $_POST['amount'] ) : 0;
-	$from_currency = isset( $_POST['fromCurrency'] ) ? sanitize_text_field( $_POST['fromCurrency'] ) : '';
-	$to_currency   = isset( $_POST['toCurrency'] ) ? sanitize_text_field( $_POST['toCurrency'] ) : '';
+	$from_currency = isset( $_POST['fromCurrency'] ) ? sanitize_text_field( wp_unslash( $_POST['fromCurrency'] ) ) : '';
+	$to_currency   = isset( $_POST['toCurrency'] ) ? sanitize_text_field( wp_unslash( $_POST['toCurrency'] ) ) : '';
 
 	// Fetch latest exchange rates from Open Exchange Rates API.
 	$api_key = 'YOUR_OPEN_EXCHANGE_RATES_API_KEY';
